@@ -39,12 +39,16 @@ export class GameManager {
             const message = JSON.parse(data.toString());
             if(message.type === INIT_GAME){
                 if(this.pendingUser){
+                    console.log("okay")
+
                     //start the game
                     const game = new Game(this.pendingUser, socket);
+                    console.log("ok cool")
                     this.games.push(game);
                     this.pendingUser = null;
                 } else {
                     this.pendingUser = socket
+                    console.log("reached here")
                 }
             }
 
