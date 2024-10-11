@@ -12,8 +12,14 @@ const ChessBoard = ({board}: {
       {board.map((row, i) => {
         return <div key={i} className='flex'>
           {row.map((square, j) => {
-            return <div key={j} className={`w-8 h-8 ${square ? 'bg-green-500':"bg-green-300"}`}>
-              {square ? square.type: ""}
+            return <div key={j} className={`w-16 h-16 ${(i+j)%2 ? 'bg-[#779556]':"bg-[#EBECD0]"}`}>
+              <div className='flex justify-center w-full text-[12px] h-full'>
+                <div className='h-full flex flex-col justify-center'>
+                {square ? square.type: ""}
+                </div>
+              
+              </div>
+              
             </div>
           })}
         </div>
