@@ -18,7 +18,7 @@ const ChessBoard = ({board, socket}: {
       {board.map((row, i) => {
         return <div key={i} className='flex'>
           {row.map((square, j) => {
-            const squareName = String.fromCharCode(65 + (j%8)) + "" + (8 - Math.floor(j / 8)) as Square;
+            const squareName = String.fromCharCode(65 + (j%8)) + "" + (8 - i) as Square;
 
             return <div onClick={() => {
               if(!from) {
