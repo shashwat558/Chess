@@ -54,7 +54,7 @@ const ChessBoard = ({board, socket, setBoard, chess}: {
             } } key={j} className={`w-16 h-16 ${(i+j)%2 ? 'bg-[#779556]':"bg-[#EBECD0]"}`}>
               <div className='flex justify-center w-full text-[12px] h-full'>
                 <div className='h-full flex flex-col justify-center'>
-                {square ? square.type: ""}
+                {square? <img className='w-12' src={`/assets/${square?.color === "b" ? square?.type : `${square?.type?.toUpperCase()} copy`}.png`}/> : null}
                 </div>
               
               </div>
